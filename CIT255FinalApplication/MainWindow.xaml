@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CIT255FinalApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="List Manager" Height="476.4" Width="436">
+    <Grid Margin="0,0,3.4,0.8" Background="Gray">
+
+        <Button Name="btn_Help" Content="?" HorizontalAlignment="Left" TextElement.FontWeight="Bold" Margin="22,20,0,0" VerticalAlignment="Top" Width="28" Height="28"/>
+        <Button Name="btn_Close" Content="X" HorizontalAlignment="Left" TextBlock.Foreground="White" TextElement.FontWeight="Bold"  Background="Red" Margin="386,20,0,0" VerticalAlignment="Top" Width="28" Height="28"/>
+        <Button Name="btn_Add" Content="A D D" TextElement.FontWeight="Bold" TextElement.FontSize="20" Background="GreenYellow"  HorizontalAlignment="Left" Margin="346,398,0,0" VerticalAlignment="Top" Width="68" Height="38"/>
+        <TextBox Name="txt_ItemTextBox" TextElement.FontSize="20" TextElement.FontWeight="Light" Background="LightGray" HorizontalAlignment="Left" Height="36" Margin="22,357,0,0" TextWrapping="Wrap" Text="Add new items here..." VerticalAlignment="Top" Width="392" TextChanged="txt_ItemTextBox_TextChanged"/>
+        <Button Name="btn_CompletedItems" Content="Done Items" TextElement.FontWeight="Bold" HorizontalAlignment="Left" Margin="22,398,0,0" VerticalAlignment="Top" Width="68" Height="38"/>
+
     </Grid>
 </Window>

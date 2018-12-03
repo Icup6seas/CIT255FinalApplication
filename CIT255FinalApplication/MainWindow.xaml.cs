@@ -24,5 +24,13 @@ namespace CIT255FinalApplication
         {
             InitializeComponent();
         }
+
+        private void txt_ItemTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_ItemTextBox.Text.Trim() != "" || txt_ItemTextBox.Text != null)
+            {
+                txt_ItemTextBox.Text = "";
+            }
+        }
     }
 }
