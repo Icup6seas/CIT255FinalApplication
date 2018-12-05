@@ -20,17 +20,49 @@ namespace CIT255FinalApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        ListManager listManager = new ListManager();
         public MainWindow()
         {
             InitializeComponent();
+            TextBoxClearAndFocus();
         }
 
-        private void txt_ItemTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        //
+        //Clears the TextBox and gains focus
+        private void TextBoxClearAndFocus()
         {
             if (txt_ItemTextBox.Text.Trim() != "" || txt_ItemTextBox.Text != null)
             {
                 txt_ItemTextBox.Text = "";
             }
+
+            txt_ItemTextBox.Focus();
+        }
+
+        private void txt_ItemTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btn_Close_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_Help_Click(object sender, RoutedEventArgs e)
+        {
+            HelpWindow help = new HelpWindow();
+            help.Show();
+        }
+
+        private void btn_Add_Click(object sender, RoutedEventArgs e)
+        {
+            if (!txt_ItemTextBox.Text.Trim().Equals(string.Empty))
+            {
+                listManager.Additem(txt_ItemTextBox.Text.Trim());
+            }
+            txt_ItemTextBox.Text = "";
+            lst_ItemsInList.Items.Refresh();
         }
     }
 }

@@ -1,0 +1,14 @@
+﻿<Window x:Class="CIT255FinalApplication.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CIT255FinalApplication"
+        mc:Ignorable="d"
+        Title="Help" Height="476.4" Width="436">
+    <Grid Background="Gray">
+        <Button x:Name="btn_Close" Content="X" HorizontalAlignment="Left" TextBlock.Foreground="White" TextElement.FontWeight="Bold"  Background="Red" Margin="386,20,0,0" VerticalAlignment="Top" Width="28" Height="28" Click="btn_Close_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="333" TextElement.FontSize="20" Width="404"><Run Text="1) Type in the Text Box what you want to keep track of"/><LineBreak/><Run/><LineBreak/><Run Text="2) When finished typing, click the ADD button to add to you list"/><LineBreak/><Run/><LineBreak/><Run Text="3) Click &quot;Done Items&quot; to show your most recently deleted items"/><LineBreak/><Run/><LineBreak/><Run Text="4) Right-Click on item or Click and hold to delete"/></TextBlock>
+
+    </Grid>
+</Window>

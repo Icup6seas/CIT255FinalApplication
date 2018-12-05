@@ -8,11 +8,20 @@
         Title="List Manager" Height="476.4" Width="436">
     <Grid Margin="0,0,3.4,0.8" Background="Gray">
 
-        <Button Name="btn_Help" Content="?" HorizontalAlignment="Left" TextElement.FontWeight="Bold" Margin="22,20,0,0" VerticalAlignment="Top" Width="28" Height="28"/>
-        <Button Name="btn_Close" Content="X" HorizontalAlignment="Left" TextBlock.Foreground="White" TextElement.FontWeight="Bold"  Background="Red" Margin="386,20,0,0" VerticalAlignment="Top" Width="28" Height="28"/>
-        <Button Name="btn_Add" Content="A D D" TextElement.FontWeight="Bold" TextElement.FontSize="20" Background="GreenYellow"  HorizontalAlignment="Left" Margin="346,398,0,0" VerticalAlignment="Top" Width="68" Height="38"/>
-        <TextBox Name="txt_ItemTextBox" TextElement.FontSize="20" TextElement.FontWeight="Light" Background="LightGray" HorizontalAlignment="Left" Height="36" Margin="22,357,0,0" TextWrapping="Wrap" Text="Add new items here..." VerticalAlignment="Top" Width="392" TextChanged="txt_ItemTextBox_TextChanged"/>
-        <Button Name="btn_CompletedItems" Content="Done Items" TextElement.FontWeight="Bold" HorizontalAlignment="Left" Margin="22,398,0,0" VerticalAlignment="Top" Width="68" Height="38"/>
+        <Button Name="btn_Help" Content="?" HorizontalAlignment="Left" TextElement.FontWeight="Bold" Margin="10,20,0,0" VerticalAlignment="Top" Width="28" Height="28" Click="btn_Help_Click"/>
+        <Button Name="btn_Close" Content="X" HorizontalAlignment="Left" TextBlock.Foreground="White" TextElement.FontWeight="Bold"  Background="Red" Margin="386,20,0,0" VerticalAlignment="Top" Width="28" Height="28" Click="btn_Close_Click"/>
+        <Button Name="btn_Add" Content="A D D" TextElement.FontWeight="Bold" TextElement.FontSize="20" Background="GreenYellow"  HorizontalAlignment="Left" Margin="346,398,0,0" VerticalAlignment="Top" Width="68" Height="38" Click="btn_Add_Click"/>
+        <TextBox Name="txt_ItemTextBox" TextElement.FontSize="20" TextElement.FontWeight="Light" Background="LightGray" HorizontalAlignment="Left" Height="36" Margin="10,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="404"
+          TextChanged="txt_ItemTextBox_TextChanged"
+                 FocusManager.FocusedElement="{Binding ElementName=txt_ItemTextBox}"/>
+        <Button Name="btn_CompletedItems" Content="Done Items" TextElement.FontWeight="Bold" HorizontalAlignment="Left" Margin="10,398,0,0" VerticalAlignment="Top" Width="68" Height="38"/>
+        <ListView Name="lst_ItemsInList" Background="Black" TextElement.FontSize="15" TextElement.FontWeight="Bold" TextElement.Foreground="GreenYellow" HorizontalAlignment="Left" Height="286" Margin="10,66,0,0" VerticalAlignment="Top" Width="404">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
