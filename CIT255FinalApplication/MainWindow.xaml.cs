@@ -24,6 +24,7 @@ namespace CIT255FinalApplication
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = listManager;
             TextBoxClearAndFocus();
         }
 
@@ -37,11 +38,6 @@ namespace CIT255FinalApplication
             }
 
             txt_ItemTextBox.Focus();
-        }
-
-        private void txt_ItemTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void btn_Close_Click(object sender, RoutedEventArgs e)
@@ -59,10 +55,49 @@ namespace CIT255FinalApplication
         {
             if (!txt_ItemTextBox.Text.Trim().Equals(string.Empty))
             {
-                listManager.Additem(txt_ItemTextBox.Text.Trim());
+                listManager.AddItem(txt_ItemTextBox.Text.Trim());
             }
             txt_ItemTextBox.Text = "";
             lst_ItemsInList.Items.Refresh();
         }
+
+        private void ClosingWindow(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            listManager.Save();
+        }
+
+        private void CheckDone(object sender, RoutedEventArgs e)
+        {
+            if (lst_ItemsInList.SelectedItem != null)
+            {
+                MessageBoxResult completed = MessageBox.Show("Complete", "Remove item?", MessageBoxButton.YesNoCancel, MessageBoxImage.Exclamation, MessageBoxResult.No);
+                if (completed == MessageBoxResult.Yes)
+                {
+                    listManager.DeleteItem(lst_ItemsInList.SelectedItem as ListItem);
+                }
+                lst_ItemsInList.Items.Refresh();
+            }
+        }
+
+        private void EditMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (lst_ItemsInList.SelectedItem != null)
+            {
+                EditItem popUp = new EditItem(lst_ItemsInList.SelectedItem as ListItem);
+                popUp.Owner = this;
+                popUp.ShowDialog();
+            }
+        }
+
+        private void chk_CompletedItems_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lst_ItemsInList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
+
 }
