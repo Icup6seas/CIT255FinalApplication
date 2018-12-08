@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CIT255FinalApplication"
         mc:Ignorable="d"
-        Title="Edit Item" Height="225" Width="432" WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Closing="ExitBox_Closing">
-    <Grid>
+        Title="Edit Item" Height="223.4" Width="434.8" WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Closing="EditBox_Closing">
+    <Grid Background="Gray">
         <StackPanel>
-            <TextBlock>To do Item:</TextBlock>
-            <TextBox Text="{Binding Path=Description, Mode=TwoWay}"/>
-            <Grid HorizontalAlignment="Stretch">
+            <TextBlock>Edit Below Item:</TextBlock>
+            <TextBox Text="{Binding Path=ItemDescription, Mode=TwoWay}"/>
+            <Grid HorizontalAlignment="Stretch" Background="Gray">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button IsDefault="True" Grid.Column="1" Click="btn_EditOk_Click" TextElement.FontWeight="Bold" Background="ForestGreen" RenderTransformOrigin="0.51,0.542" Margin="299,133,86.6,-133.8">OK</Button>
-                <Button IsCancel="True" Grid.Column="1" Grid.ColumnSpan="2" Background="Red" TextElement.FontWeight="Bold" TextElement.Foreground="White" Margin="356.8,133,11.6,-133.8" Click="btn_EditCancel_Click">Cancel</Button>
+                <Button x:Name="btn_EditOk" IsDefault="True" Grid.Column="1" Click="btn_EditOk_Click" TextElement.FontWeight="Bold" Background="ForestGreen" RenderTransformOrigin="0.51,0.542" Margin="99,133,286.6,-133.6">OK</Button>
+                <Button x:Name="btn_EditCancel" IsCancel="True" Grid.Column="1" Background="Red" TextElement.FontWeight="Bold" TextElement.Foreground="White" Margin="160,133,208.6,-133.6">Cancel</Button>
             </Grid>
         </StackPanel>
     </Grid>

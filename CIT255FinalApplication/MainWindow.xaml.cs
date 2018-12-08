@@ -79,6 +79,19 @@ namespace CIT255FinalApplication
             }
         }
 
+        private void MarkComplete(object sender, RoutedEventArgs e)
+        {
+            if (lst_ItemsInList.SelectedItem != null)
+            {
+                MessageBoxResult complete = MessageBox.Show("Complete?", "Done?", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+                if (complete == MessageBoxResult.Yes)
+                {
+                    (lst_ItemsInList.SelectedItem as ListItem).DateComplete = DateTime.Now.ToString("MM-dd-yyyy");
+                }
+                lst_ItemsInList.Items.Refresh();
+            }
+        }
+
         private void EditMenu_Click(object sender, RoutedEventArgs e)
         {
             if (lst_ItemsInList.SelectedItem != null)
@@ -86,7 +99,13 @@ namespace CIT255FinalApplication
                 EditItem popUp = new EditItem(lst_ItemsInList.SelectedItem as ListItem);
                 popUp.Owner = this;
                 popUp.ShowDialog();
+                lst_ItemsInList.Items.Refresh();
             }
+        }
+
+        private void EditBox_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            listManager.Save();
         }
 
         private void chk_CompletedItems_Checked(object sender, RoutedEventArgs e)

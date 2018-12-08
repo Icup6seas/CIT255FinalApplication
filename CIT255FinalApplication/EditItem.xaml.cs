@@ -25,6 +25,7 @@ namespace CIT255FinalApplication
         {
             InitializeComponent();
             DataContext = item;
+            
             temporaryDesc = item.ItemDescription;
         }
 
