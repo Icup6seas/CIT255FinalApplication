@@ -24,8 +24,7 @@ namespace CIT255FinalApplication
         public EditItem(ListItem item)
         {
             InitializeComponent();
-            DataContext = item;
-            
+            DataContext = item;     
             temporaryDesc = item.ItemDescription;
         }
 
@@ -39,6 +38,11 @@ namespace CIT255FinalApplication
         {
             bool output = DialogResult ?? false;
             if (!output) (DataContext as ListItem).ItemDescription = temporaryDesc;
+        }
+
+        private void btn_EditOk_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

@@ -5,33 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CIT255FinalApplication"
         mc:Ignorable="d"
-        Title="List Manager" Height="478.4" Width="432" SizeToContent="Width" ResizeMode="CanMinimize" WindowStyle="ToolWindow">
+        Title="List Manager" Height="486.4" Width="428.8" SizeToContent="Width" ResizeMode="CanMinimize" WindowStyle="ToolWindow">
     <Window.Resources>
-        <ContextMenu x:Key="itemMenu">
-            <MenuItem Header="_Edit" Click="EditMenu_Click"/>
+        <ContextMenu x:Key="itemMenu" Background="DarkSlateGray" TextElement.FontWeight="Bold" TextElement.Foreground="GreenYellow">
+            <MenuItem Header="Edit" Click="EditMenu_Click"/>
             <MenuItem Header="Mark Done" Click="MarkComplete"/>
-            <TextBlock></TextBlock>
-            <MenuItem Header="_Delete" Click="CheckDone"/>
+            <MenuItem Header="Delete" Click="CheckDone"/>
         </ContextMenu>
     </Window.Resources>
-    <Grid Background="Gray">
+    <Grid Background="Gray" Margin="0,0,-6.4,-0.4">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="189.6" />
-            <ColumnDefinition />
-            <ColumnDefinition Width="Auto" MinWidth="125.6" />
+            <ColumnDefinition Width="428.8" />
         </Grid.ColumnDefinitions>
-        <ListView x:Name="lst_ItemsInList" Background="white" TextElement.FontWeight="Bold" TextElement.Foreground="Black" HorizontalAlignment="Left" Margin="10,66,0,96.6" VerticalAlignment="Stretch" Width="404" MouseDoubleClick="lst_ItemsInList_MouseDoubleClick" ContextMenu="{StaticResource itemMenu}" ItemsSource="{Binding Path=Items}" Grid.ColumnSpan="3">
-        </ListView>
+        <ListView x:Name="lst_ItemsInList" Background="Black" TextElement.FontWeight="Bold" TextElement.FontSize="20" TextElement.Foreground="GreenYellow" HorizontalAlignment="Left" Margin="10,57,0,105.6" VerticalAlignment="Stretch" Width="404" MouseDoubleClick="lst_ItemsInList_MouseDoubleClick" ContextMenu="{StaticResource itemMenu}" ItemsSource="{Binding Path=Items}"/>
         <Button x:Name="btn_Help" Content="?" HorizontalAlignment="Left" TextElement.FontWeight="Bold" Margin="10,20,0,0" VerticalAlignment="Top" Width="28" Height="28" Click="btn_Help_Click"/>
-        <Button x:Name="btn_Close" Content="X" HorizontalAlignment="Left" TextBlock.Foreground="White" TextElement.FontWeight="Bold"  Background="Red" Margin="86,20,0,0" VerticalAlignment="Top" Width="28" Height="28" Click="btn_Close_Click" Grid.Column="2" RenderTransformOrigin="-1.932,0.711"/>
-        <Button x:Name="btn_Add" Content="A D D" TextElement.FontWeight="Bold" TextElement.FontSize="20" Background="GreenYellow"  HorizontalAlignment="Left" Margin="46,405,0,0" VerticalAlignment="Top" Width="68" Height="38" Click="btn_Add_Click" Grid.Column="2"/>
-        <TextBox x:Name="txt_ItemTextBox" TextElement.FontSize="20" TextElement.FontWeight="Light" Background="LightGray" HorizontalAlignment="Left" Height="36" Margin="10,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="404"
-                 FocusManager.FocusedElement="{Binding ElementName=txt_ItemTextBox}" Grid.ColumnSpan="3"/>
-        <CheckBox x:Name="chk_CompletedItems" Content="Show Deleted" TextElement.FontSize="15" TextElement.Foreground="DarkRed" TextElement.FontWeight="Bold" IsChecked="{Binding Path=ShowDoneItems, Mode=TwoWay}" Checked="chk_CompletedItems_Checked" Margin="10,405,54.6,4.6"/>
+        <Button x:Name="btn_Close" Content="X" HorizontalAlignment="Left" TextBlock.Foreground="White" TextElement.FontWeight="Bold"  Background="Red" Margin="386,20,0,0" VerticalAlignment="Top" Width="28" Height="28" Click="btn_Close_Click" RenderTransformOrigin="-1.932,0.711"/>
+        <Button x:Name="btn_Add" Content="A D D" TextElement.FontWeight="Bold" TextElement.FontSize="20" Background="GreenYellow"  HorizontalAlignment="Left" Margin="346,405,0,0" VerticalAlignment="Top" Width="68" Height="38" Click="btn_Add_Click"/>
+        <TextBox x:Name="txt_ItemTextBox" TextElement.FontSize="20" TextElement.FontWeight="Bold" TextElement.Foreground="Purple" Background="Aquamarine" HorizontalAlignment="Left" Height="36" Margin="10,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="404"
+                 FocusManager.FocusedElement="{Binding ElementName=txt_ItemTextBox}"/>
+        <CheckBox x:Name="chk_CompletedItems" Content="Show Completed" TextElement.FontSize="15" TextElement.Foreground="GreenYellow" TextElement.FontWeight="Bold" IsChecked="{Binding Path=DoneItems, Mode=TwoWay}" Checked="chk_CompletedItems_Checked" Margin="10,405,270.8,4.6"/>
+        <Label Content="The List Manager" TextElement.FontWeight="Bold" TextElement.FontSize="22" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Height="38" Width="192"/>
     </Grid>
 </Window>

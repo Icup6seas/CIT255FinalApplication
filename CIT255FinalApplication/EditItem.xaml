@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CIT255FinalApplication"
         mc:Ignorable="d"
-        Title="Edit Item" Height="223.4" Width="434.8" WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Closing="EditBox_Closing">
-    <Grid Background="Gray">
+        Title="Edit Item" Height="179.4" Width="438.8" WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Closing="EditBox_Closing">
+    <Grid Background="DarkSlateGray">
         <StackPanel>
-            <TextBlock>Edit Below Item:</TextBlock>
-            <TextBox Text="{Binding Path=ItemDescription, Mode=TwoWay}"/>
-            <Grid HorizontalAlignment="Stretch" Background="Gray">
+            <TextBlock TextElement.FontWeight="Bold" TextElement.Foreground="GreenYellow">Edit Below Item:</TextBlock>
+            <TextBox Text="{Binding Path=ItemDescription, Mode=TwoWay}" Background="Aquamarine" TextElement.Foreground="Purple" TextElement.FontWeight="Bold" TextElement.FontSize="25"/>
+            <Grid HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btn_EditOk" IsDefault="True" Grid.Column="1" Click="btn_EditOk_Click" TextElement.FontWeight="Bold" Background="ForestGreen" RenderTransformOrigin="0.51,0.542" Margin="99,133,286.6,-133.6">OK</Button>
-                <Button x:Name="btn_EditCancel" IsCancel="True" Grid.Column="1" Background="Red" TextElement.FontWeight="Bold" TextElement.Foreground="White" Margin="160,133,208.6,-133.6">Cancel</Button>
+                <Button x:Name="btn_EditOk" IsDefault="True" Grid.Column="1" Click="btn_EditOk_Click" TextElement.FontWeight="Bold" Background="GreenYellow" RenderTransformOrigin="0.51,0.542" Margin="291,62,94,-62.6" Height="19" VerticalAlignment="Top" Content="OK"/>
+                <Button x:Name="btn_EditCancel" IsCancel="True" Grid.Column="1" Background="Red" TextElement.FontWeight="Bold" TextElement.Foreground="White" Margin="360,62,9,-62.6" Content="Cancel"/>
             </Grid>
         </StackPanel>
     </Grid>

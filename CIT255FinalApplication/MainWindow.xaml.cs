@@ -110,7 +110,7 @@ namespace CIT255FinalApplication
 
         private void chk_CompletedItems_Checked(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void lst_ItemsInList_MouseDoubleClick(object sender, MouseButtonEventArgs e)

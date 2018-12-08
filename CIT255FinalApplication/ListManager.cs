@@ -78,6 +78,7 @@ namespace CIT255FinalApplication
             }
             return output;
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 
