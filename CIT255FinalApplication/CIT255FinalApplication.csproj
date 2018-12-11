@@ -71,9 +71,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAL\IDataServices.cs" />
-    <Compile Include="DAL\XmlDataService.cs" />
-    <Compile Include="Data\AppConfig.cs" />
     <Compile Include="EditItem.xaml.cs">
       <DependentUpon>EditItem.xaml</DependentUpon>
     </Compile>
@@ -87,7 +84,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\ListOfItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -111,10 +107,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Data\ListManagerItems.xml" />
+    <Resource Include="Documentation\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
