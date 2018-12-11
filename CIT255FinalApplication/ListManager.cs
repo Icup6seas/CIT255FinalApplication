@@ -129,6 +129,15 @@ namespace CIT255FinalApplication
             {
                 listManager = XDocument.Load(listFile);
                 items = (from e in listManager.Root.Elements() select new ListItem(e)).ToList();
+
+                //listManager = XDocument.Load(listFile);
+                //foreach (var item in listFile)
+                //{
+                //    if (item is XText)
+                //    {
+                //        listManager.Root.Elements()
+                //    }
+                //}
             }
             else
             {
@@ -136,11 +145,11 @@ namespace CIT255FinalApplication
                 listManager.Add(new XElement("listManagerItems"));
                 items = new List<ListItem>();
             }
-            
+            //listManager.Save(listFile);
         }
         public void AddItem(string itemDescription)
         {
-            XElement item = new XElement("listitem");
+            XElement item = new XElement("listItem");
             XElement dateMade = new XElement("dateMade");
             dateMade.Value = DateTime.Now.ToString("MM-dd-yyyy");
             item.Add(dateMade);
