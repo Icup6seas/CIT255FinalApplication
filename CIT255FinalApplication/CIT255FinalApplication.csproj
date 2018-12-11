@@ -111,7 +111,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Data\ListManagerItems.xml" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Documentation\ReadMe.txt" />
   </ItemGroup>

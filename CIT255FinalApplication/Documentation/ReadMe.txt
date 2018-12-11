@@ -2,7 +2,7 @@
 Description: Allows a user to add/delete/complete items in their list
 Application Type: WPF
 Persistence Type: XML
-Persistence Location:\CIT255FinalApplication\CIT255FinalApplication\listManagerItems.txt
+Persistence Location:Data\ListManagerItems.xml
 Author: Chris Cosnowski
 Date Created: 11/18/18
 Last Modified: 12/09/18
